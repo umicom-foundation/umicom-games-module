@@ -117,3 +117,11 @@ endif()
 
 message(STATUS "Umicom Games Module version: ${PROJECT_VERSION}")
 message(STATUS "Umicom Games uses Framework-owned application experience")
+
+include(
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../framework/cmake/UmicomApplicationProductisationContribution.cmake")
+umicom_add_application_productisation_contribution(
+    NAME "games"
+    TARGET umicom_games_productisation
+    SOURCE "src/productisation_contribution.c"
+    TEST_SOURCE "tests/test_productisation_contribution.c")
