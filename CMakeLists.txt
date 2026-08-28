@@ -72,6 +72,12 @@ target_link_libraries(umicom_games_module PUBLIC
 umicom_apply_warnings(umicom_games_module)
 umicom_apply_sanitizers(umicom_games_module)
 
+include(
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../framework/cmake/UmicomThinApplicationRuntime.cmake")
+umicom_extend_thin_application_runtime(
+    NAME "games"
+    TARGET "umicom_games_module")
+
 if(UMICOM_GAMES_BUILD_CONSOLE)
     add_executable(umicom-games-console
         src/console/main.c)
