@@ -6,6 +6,8 @@ application:
   short_name: Games
   version: 0.1.0
   executable: umicom-games-console
+  native_executable: umicom-games
+  console_executable: umicom-games-console
   aliases: [games]
 
 framework:
@@ -14,6 +16,8 @@ framework:
 
 frontends:
   - console
+  # Shared Framework GTK layout preview; domain services require controllers.
+  - gtk
 
 entry:
   kind: workbench
